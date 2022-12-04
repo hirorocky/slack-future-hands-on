@@ -2,6 +2,7 @@ import { Manifest } from "deno-slack-sdk/mod.ts";
 import MemberAdditionWorkflow from "./workflows/member_addition_workflow.ts";
 import MemberRemovalWorkflow from "./workflows/member_removal_workflow.ts";
 import MemberListWorkflow from "./workflows/member_list_workflow.ts";
+import MemberGroupingWorkflow from "./workflows/member_grouping_workflow.ts";
 import MemberDatastore from "./datastores/members.ts";
 
 /**
@@ -17,6 +18,7 @@ export default Manifest({
     MemberAdditionWorkflow,
     MemberRemovalWorkflow,
     MemberListWorkflow,
+    MemberGroupingWorkflow,
   ],
   datastores: [MemberDatastore],
   botScopes: [

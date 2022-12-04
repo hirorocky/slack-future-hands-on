@@ -20,7 +20,6 @@ export const MemberListFunctionDefinition = DefineFunction({
 export default SlackFunction(
   MemberListFunctionDefinition,
   async ({ client }) => {
-    let message = "登録されているメンバー：";
     const result = await client.apps.datastore.query<
       typeof MemberDataStore.definition
     >(
@@ -28,8 +27,9 @@ export default SlackFunction(
         datastore: MemberDataStore.name,
       },
     );
-
-    for (const item of result.items) {
+    const items = result.items;
+    let message = `登録されているメンバー(計${items.length}名)：`;
+    for (const item of items) {
       message = message.concat(`<@${item.user_id}> `);
     }
 
