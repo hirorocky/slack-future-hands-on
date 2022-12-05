@@ -51,22 +51,30 @@ export default SlackFunction(
     const shuffled_members = EArray(members).shuffle();
     const countOfFourMemberGroups = inputs.countOfFourMemberGroups;
     for (let i = 0; i < countOfFourMemberGroups; i++) {
-      message = message.concat(`\nグループ${group_number}:\n`);
+      message = message.concat(`＜グループ${group_number}＞\n`);
 
       for (let j = 0; j < 4; j++) {
         const member = shuffled_members.pop();
-        message = message.concat(`<@${member}>`);
+        if (j == 0) {
+          message = message.concat(`リーダー：<@${member}>\n`);
+        } else {
+          message = message.concat(`<@${member}>`);
+        }
       }
       group_number++;
     }
 
     const countOfThreeMemberGroups = inputs.countOfThreeMemberGroups;
     for (let i = 0; i < countOfThreeMemberGroups; i++) {
-      message = message.concat(`\nグループ${group_number}:\n`);
+      message = message.concat(`\n＜グループ${group_number}＞\n`);
 
       for (let j = 0; j < 3; j++) {
         const member = shuffled_members.pop();
-        message = message.concat(`<@${member}>`);
+        if (j == 0) {
+          message = message.concat(`リーダー：<@${member}>\n`);
+        } else {
+          message = message.concat(`<@${member}>`);
+        }
       }
       group_number++;
     }
