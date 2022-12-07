@@ -51,7 +51,7 @@ export default SlackFunction(
     const shuffled_members = EArray(members).shuffle();
     const countOfFourMemberGroups = inputs.countOfFourMemberGroups;
     for (let i = 0; i < countOfFourMemberGroups; i++) {
-      message = message.concat(`＜グループ${group_number}＞\n`);
+      message = message.concat(`\n＜グループ${group_number}＞\n`);
 
       for (let j = 0; j < 4; j++) {
         const member = shuffled_members.pop();
