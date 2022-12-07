@@ -1,1 +1,10 @@
-{}
+{
+  "apps": {
+    "piazzapiazza": {
+      "name": "piazzapiazza",
+      "app_id": "A04DS8AKRC4",
+      "team_id": "T02MT16AJ"
+    }
+  },
+  "default": "piazzapiazza"
+}
